@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+}
+label {
+  display: block;
+}
+.data, .km {
+  margin: 0.3rem;
+}
+button, input {
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+}
