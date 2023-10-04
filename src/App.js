@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import WorkoutsList from './components/WorkoutsList/WorkoutsList';
+import WorkoutsList from './components/WorkoutsList';
 
 function App() {
   return (

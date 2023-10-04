@@ -1,9 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 .App {
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  margin: 0 auto;
-  max-width: 400px;
 }
+
 .form {
   display: flex;
   flex-direction: row;
@@ -19,4 +19,82 @@ button, input {
   background: #fff;
   border: 1px solid black;
   border-radius: 5px;
+}
+td button {
+  border: none;
+}
+table {
+  table-layout: fixed;
+  width: 50%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 3px solid purple;
+  background-color: #fff;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  padding: 20px;
+}
+.workout-table__item svg {
+  position: relative;
+  margin: 0.3rem;
+  width: 16px;
+  height: 16px;
+}
+.workouts-form {
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  margin: 0 auto;
+}
+.form-block {
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+.form-block label {
+  margin: 0.3rem 0;
+}
+.form-block input {
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.form-block button {
+  margin-bottom: 0.2rem;
+  color: #45082e;
+  border: none;
+  background-color: #c399de;
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  box-shadow: 0px 5px #6a4c7d;
+}
+.form-block button:hover {
+  top: 2px;
+  box-shadow: 0px 3px #6a4c7d;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
 }
