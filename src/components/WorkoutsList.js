@@ -13,13 +13,16 @@ export default function WorkoutsList() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (date.length === 8) {
+    const dateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
+    if (dateRegex.test(date) && km !== "") {
       const newWorkout = {
         date: date,
         km: km
       };
       const updatedWorkouts = [...workouts, newWorkout];
       setWorkouts(updatedWorkouts);
+      setDate(""); 
+      setKm(""); 
     }
   };
   let workoutsSort = workouts.sort(function (a, b) {
