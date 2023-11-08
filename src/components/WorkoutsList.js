@@ -26,13 +26,13 @@ export default function WorkoutsList() {
     }
   };
   let workoutsSort = workouts.sort(function (a, b) {
-    if (a.date > b.date) {
-      return 1;
-    }
-    if (a.date < b.date) {
+    /*if ((new Date(a.date)).getTime() > (new Date(b.date)).getTime()) {
       return -1;
     }
-    return 0;
+    if (a.date < b.date) {
+      return 1;
+    }*/
+    return new Date(b.date) - new Date(a.date);
   });
   console.log(workoutsSort);
   const workoutsResult = Object.entries(
