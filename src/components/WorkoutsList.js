@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import WorkoutTable from "./WorkoutTable"
+import WorkoutTable from "./WorkoutTable";
+import {v4 as uuidv4} from 'uuid';
+
 export default function WorkoutsList() {
   const [km, setKm] = useState("");
   const [date, setDate] = useState("");
   const [workouts, setWorkouts] = useState([]);
+  const handleSetState = (list) => {
+    setWorkouts(list)
+  }
   const handleChange = (e) => {
     if (e.target.id === "km") {
       setKm(e.target.value);
@@ -17,7 +22,8 @@ export default function WorkoutsList() {
     if (dateRegex.test(date) && km !== "") {
       const newWorkout = {
         date: date,
-        km: km
+        km: km,
+        id: uuidv4()
       };
       const updatedWorkouts = [...workouts, newWorkout];
       setWorkouts(updatedWorkouts);
@@ -25,14 +31,14 @@ export default function WorkoutsList() {
       setKm(""); 
     }
   };
-  let workoutsSort = workouts.sort(function (a, b) {
-    /*if ((new Date(a.date)).getTime() > (new Date(b.date)).getTime()) {
+  let workoutsSort = workouts/*.slice()*/.sort(function (a, b) {
+    if ((new Date(a.date)).getTime() > (new Date(b.date)).getTime()) {
       return -1;
     }
     if (a.date < b.date) {
       return 1;
-    }*/
-    return new Date(b.date) - new Date(a.date);
+    }
+    //return new Date(b.date) - new Date(a.date);
   });
   console.log(workoutsSort);
   const workoutsResult = Object.entries(
@@ -69,7 +75,7 @@ export default function WorkoutsList() {
           <button type="submit">OK</button>
         </div>
       </form>
-      {workoutsResult && <WorkoutTable workouts={workoutsResult} />}
+      {workoutsResult && <WorkoutTable workouts={workoutsResult} func ={handleSetState}/>}
     </div>
   );
 }
